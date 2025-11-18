@@ -6,7 +6,7 @@
 /*   By: jocalder <jocalder@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 16:00:17 by jocalder          #+#    #+#             */
-/*   Updated: 2025/11/18 16:16:05 by jocalder         ###   ########.fr       */
+/*   Updated: 2025/11/18 18:00:43 by jocalder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ PhoneBook::~PhoneBook() {}
 void    PhoneBook::add()
 {
     Contact new_contact;
-    
+
     std::string input;
     std::cout << "Enter first name: \n";
     std::getline(std::cin, input);
@@ -60,7 +60,7 @@ void    PhoneBook::add()
     	std::cout << "Please insert a valid argument";
 		return ;
 	}
-	
+
 	int	current;
 	if (contacts < 8)
 	{
