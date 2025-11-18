@@ -6,13 +6,13 @@
 /*   By: jocalder <jocalder@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 16:00:17 by jocalder          #+#    #+#             */
-/*   Updated: 2025/11/17 18:31:34 by jocalder         ###   ########.fr       */
+/*   Updated: 2025/11/18 16:16:05 by jocalder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 
-PhoneBook::PhoneBook(): contacts(0), oldest(0) {}
+PhoneBook::PhoneBook(): oldest(0), contacts(0) {}
 PhoneBook::~PhoneBook() {}
 
 void    PhoneBook::add()
@@ -25,7 +25,7 @@ void    PhoneBook::add()
     new_contact.setName(input);
     if (input.empty())
     {
-    	std::cout << "Please insert a valid argument";
+    	std::cout << "Please insert a valid argument\n";
 		return ;
 	}
 	std::cout << "Enter last name: \n";
@@ -33,7 +33,7 @@ void    PhoneBook::add()
     new_contact.setLast(input);
     if (input.empty())
     {
-    	std::cout << "Please insert a valid argument";
+    	std::cout << "Please insert a valid argument\n";
 		return ;
 	}
 	std::cout << "Enter nick name: \n";
@@ -41,7 +41,7 @@ void    PhoneBook::add()
     new_contact.setNick(input);
     if (input.empty())
     {
-    	std::cout << "Please insert a valid argument";
+    	std::cout << "Please insert a valid argument\n";
 		return ;
 	}
 	std::cout << "Enter phone number: \n";
@@ -95,6 +95,23 @@ void	PhoneBook::search()
 			nick = nick.substr(0, 9) + ".";
 		std::cout << std::setw(10) << i << "|"
 				<< std::setw(10) << name << "|"
-				<< std::setw(10) << last << "|" << std::endl;		
+				<< std::setw(10) << last << "|"
+				<< std::setw(10) << nick << std::endl;		
 	}
+	
+	int	index = -1;
+	std::cout << "Select index" << std::endl;
+	std::getline(std::cin, input);
+	index = std::atoi(input.c_str());
+	if (index < 0 | index >= contacts)
+	{
+		std::cout << "Please enter a valid index" << std::endl;
+		return ;
+	}
+	std::cout << "First name: " << array[index].getName() << std::endl;
+	std::cout << "Last name: " << array[index].getLast() << std::endl;
+	std::cout << "Nick name: " << array[index].getNick() << std::endl;
+	std::cout << "Phone number:" << array[index].getPhone() << std::endl;
+	std::cout << "Darkest secret: " << array[index].getDarkest() << std::endl;
+	std::cout << std::endl;
 }

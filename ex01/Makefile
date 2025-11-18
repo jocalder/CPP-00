@@ -4,7 +4,9 @@ C++		=	c++
 
 FLAGS	=	-Wall -Wextra -Werror -std=c++98
 
-SRC		=	megaphone.cpp
+SRC		=	PhoneBook.cpp \
+			Contact.cpp	\
+			Main.cpp	\
 
 OBJ		=	$(SRC:.cpp=.o)
 

@@ -1,35 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   Main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jocalder <jocalder@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/17 15:43:16 by jocalder          #+#    #+#             */
-/*   Updated: 2025/11/18 15:55:47 by jocalder         ###   ########.fr       */
+/*   Created: 2025/11/18 14:17:30 by jocalder          #+#    #+#             */
+/*   Updated: 2025/11/18 16:10:41 by jocalder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-#define PHONEBOOK_HPP
+#include "PhoneBook.hpp"
 
-#include <iostream>
-#include <cctype>
-#include <iomanip>
-#include <cstdlib>
-#include "Contact.hpp"
-
-class PhoneBook
+int	main()
 {
-    private:
-        Contact array[8];
-        int     oldest;
-        int     contacts;
-    public:
-        PhoneBook();
-        ~PhoneBook();
-        void add();
-        void search();
-};
+	PhoneBook	phonebook;
+	std::string	line;
 
-#endif
+	while (1)
+	{
+		std::cout << "Enter type <ADD> <SEARCH> or <EXIT>" << std::endl;
+		std::getline(std::cin, line);
+		if (std::cin.eof())
+			return (1);
+		if (line.compare("ADD") == 0)
+			phonebook.add();
+		if (line.compare("SEARCH") == 0)
+			phonebook.search();
+		if (line.compare("EXIT") == 0)
+			break ;
+	}
+	return (0);
+}
