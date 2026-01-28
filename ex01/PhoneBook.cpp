@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jocalder <jocalder@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: jocalder <jocalder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 16:00:17 by jocalder          #+#    #+#             */
-/*   Updated: 2025/11/18 18:00:43 by jocalder         ###   ########.fr       */
+/*   Updated: 2026/01/28 12:54:10 by jocalder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void    PhoneBook::add()
     new_contact.setPhone(input);
     if (input.empty())
     {
-    	std::cout << "Please insert a valid argument";
+    	std::cout << "Please insert a valid argument\n";
 		return ;
 	}
 	std::cout << "Enter darkest secret: \n";
@@ -57,7 +57,7 @@ void    PhoneBook::add()
     new_contact.setDarkest(input);
     if (input.empty())
     {
-    	std::cout << "Please insert a valid argument";
+    	std::cout << "Please insert a valid argument\n";
 		return ;
 	}
 
@@ -103,7 +103,7 @@ void	PhoneBook::search()
 	std::cout << "Select index" << std::endl;
 	std::getline(std::cin, input);
 	index = std::atoi(input.c_str());
-	if (index < 0 | index >= contacts)
+	if (index < 0 || index >= contacts)
 	{
 		std::cout << "Please enter a valid index" << std::endl;
 		return ;

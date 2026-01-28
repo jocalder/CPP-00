@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jocalder <jocalder@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: jocalder <jocalder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 14:17:30 by jocalder          #+#    #+#             */
-/*   Updated: 2025/11/18 16:59:21 by jocalder         ###   ########.fr       */
+/*   Updated: 2026/01/28 12:52:35 by jocalder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@ int	main()
 
 	while (1)
 	{
-		std::cout << "Enter type <ADD> <SEARCH> or <EXIT>" << std::endl;
-		std::getline(std::cin, line);
 		if (std::cin.eof())
 			return (1);
+		std::cout << "Enter type <ADD> <SEARCH> or <EXIT>" << std::endl;
+		std::getline(std::cin, line);
 		if (line.compare("ADD") == 0)
 			phonebook.add();
 		if (line.compare("SEARCH") == 0)
